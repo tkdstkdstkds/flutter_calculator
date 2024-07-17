@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Flutter on Chrome",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "deviceId": "chrome"
+      },
+      {
+        "name": "Flutter on Android",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "deviceId": "127.0.0.1:54008"  // 使用 `flutter devices` 查找你的Android設備ID
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Launch Chrome and Android",
+        "configurations": [
+          "Flutter on Chrome",
+          "Flutter on Android"
+        ]
+      }
+    ]
+  }
+  
