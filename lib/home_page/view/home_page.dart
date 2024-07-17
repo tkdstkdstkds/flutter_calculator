@@ -16,7 +16,6 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('MyHomePage build');
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<HomePageListBloc>().add(const HomePageListFetchDataEvent());
     });

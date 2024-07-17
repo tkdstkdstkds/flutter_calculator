@@ -47,9 +47,8 @@ class HomePageListBloc extends Bloc<HomePageListEvent, HomePageListState> {
     // remove previous data, avoid hot reload keep old data
     homePageRespository.clear();
 
-    print('onHomePageListFetchDataEvent');
     await homePageStorage.init();
-    print('onHomePageListFetchDataEvent 1');
+
     HomePageListModel? loadedModel = await homePageStorage.get<HomePageListModel>(storage_key.homePageKey);
     if(loadedModel == null || loadedModel.isEmpty()) {
       List<HomePageListItemModel> items = [];
@@ -60,7 +59,7 @@ class HomePageListBloc extends Bloc<HomePageListEvent, HomePageListState> {
       loadedModel = HomePageListModel(items: items);
     }
     homePageRespository.mergeListModel(loadedModel);
-    print('onHomePageListFetchDataEvent 2');
+    
     emit(HomePageListFetchDataSuccessState(homePageRespository.getListItems()));
 }
 
