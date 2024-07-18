@@ -46,18 +46,18 @@ Widget createFieldRow(BuildContext context) {
         ),
         const SizedBox(width: 16),
 
-        const Expanded(
-          child: Center(
-            child: Text(
-              '加總',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(width: 16),
+        // const Expanded(
+        //   child: Center(
+        //     child: Text(
+        //       '加總',
+        //       style: TextStyle(
+        //         fontSize: 20,
+        //         fontWeight: FontWeight.bold,
+        //       ),
+        //     ),
+        //   ),
+        // ),
+        // const SizedBox(width: 16),
 
         FloatingActionButton(
           mini: true,
@@ -96,18 +96,19 @@ Widget createTextFieldRow(BuildContext context, int index) {
           Expanded(
             child: TextField(
               controller: TextEditingController(
-                text: (currentItemModel.itemSinglePrice == 0) ? '0' : currentItemModel.itemSinglePrice.toStringAsFixed(2)),
+                text: (currentItemModel.itemSinglePrice == 0) ? '0' : currentItemModel.itemSinglePrice.toInt.toString()),
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: '單價',
               ),
               inputFormatters: [
                 // allow only numbers and one dot
-                FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}')),
-                //FilteringTextInputFormatter.digitsOnly,
+                //FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}')),
+                FilteringTextInputFormatter.digitsOnly,
                 LeadingZeroFormatter(),
               ],
               keyboardType: TextInputType.number,
+              //keyboardType: const TextInputType.numberWithOptions(decimal: true),
 
               onChanged: (value) {
                 if (value.isEmpty) return;
@@ -142,35 +143,35 @@ Widget createTextFieldRow(BuildContext context, int index) {
 
           const SizedBox(width: 16),
 
-          Expanded(
-            child: Center(
-              child: 
-                BlocBuilder<HomePageListItemBloc, HomePageListItemState>(
-                  builder: (_, state) {
-                      double itemTotalPrice;
-                      switch(state) {
-                        case HomePageListItemUpdateState _:
-                          itemTotalPrice = (currentItemModel == state.updatedItemModel)
-                            ? state.updatedItemModel.itemTotalPrice
-                            : currentItemModel.itemTotalPrice;
-                          break;
+          // Expanded(
+          //   child: Center(
+          //     child: 
+          //       BlocBuilder<HomePageListItemBloc, HomePageListItemState>(
+          //         builder: (_, state) {
+          //             double itemTotalPrice;
+          //             switch(state) {
+          //               case HomePageListItemUpdateState _:
+          //                 itemTotalPrice = (currentItemModel == state.updatedItemModel)
+          //                   ? state.updatedItemModel.itemTotalPrice
+          //                   : currentItemModel.itemTotalPrice;
+          //                 break;
 
-                        default:
-                          itemTotalPrice = currentItemModel.itemTotalPrice;
-                          break;
-                      }
-                      return Text(
-                          itemTotalPrice.toStringAsFixed(2),
-                          maxLines: 1,
-                          style: const TextStyle(
-                            fontSize: 20,
-                          )
-                        );
-                    },
+          //               default:
+          //                 itemTotalPrice = currentItemModel.itemTotalPrice;
+          //                 break;
+          //             }
+          //             return Text(
+          //                 itemTotalPrice.toStringAsFixed(2),
+          //                 maxLines: 1,
+          //                 style: const TextStyle(
+          //                   fontSize: 20,
+          //                 )
+          //               );
+          //           },
                   
-                )
-            ),
-          ),
+          //       )
+          //   ),
+          // ),
 
           const SizedBox(width: 16),
 
