@@ -66,10 +66,6 @@ class MyHomePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return ListTile(
                     key: Key('$index'),
-                    leading: ReorderableDragStartListener(
-                      index: index,
-                      child: const Icon(Icons.drag_handle),
-                    ),
                     tileColor: index.isEven ? Colors.grey[200] : Colors.white,
                     // Note: pass bloc to child widget
                     title: BlocProvider.value(

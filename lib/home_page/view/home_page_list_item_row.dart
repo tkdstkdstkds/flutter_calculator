@@ -4,12 +4,13 @@ Widget createFieldRow(BuildContext context) {
   return SizedBox(
     height: 50,
     child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        const Icon(Icons.drag_handle),
+        const SizedBox(width: 20),
 
-        const SizedBox(width: 16),
+        const SizedBox(width: 8),
         const Expanded(
+          flex: 3,
           child: Center(
             child: Text(
               '項目',
@@ -20,7 +21,7 @@ Widget createFieldRow(BuildContext context) {
             ),
           ),
         ),
-        const SizedBox(width: 16),
+        const SizedBox(width: 3),
         const Expanded(
           child: Center(
             child: Text(
@@ -32,7 +33,7 @@ Widget createFieldRow(BuildContext context) {
             ),
           ),
         ),
-        const SizedBox(width: 16),
+        const SizedBox(width: 3),
         const Expanded(
           child: Center(
             child: Text(
@@ -44,7 +45,7 @@ Widget createFieldRow(BuildContext context) {
             ),
           ),
         ),
-        const SizedBox(width: 16),
+        const SizedBox(width: 8),
 
         // const Expanded(
         //   child: Center(
@@ -57,11 +58,14 @@ Widget createFieldRow(BuildContext context) {
         //     ),
         //   ),
         // ),
-        // const SizedBox(width: 16),
+        // const SizedBox(width: 3),
 
         FloatingActionButton(
           mini: true,
-          child: const Icon(Icons.delete_forever_outlined),
+          //child: const Icon(Icons.delete_forever_outlined),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          highlightElevation: 0,
           onPressed: () => {}
         ),
         
@@ -77,10 +81,17 @@ Widget createTextFieldRow(BuildContext context, int index) {
   return SizedBox(
       height: 50,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          
+          ReorderableDragStartListener(
+            index: index,
+            child: const Icon(
+              Icons.drag_handle,
+              size: 20,
+            )),
+          const SizedBox(width: 8),
           Expanded(
+            flex: 3,
             child: TextField(
               controller: TextEditingController(text: currentItemModel.itemName),
               decoration: const InputDecoration(
@@ -92,7 +103,7 @@ Widget createTextFieldRow(BuildContext context, int index) {
               }
             ),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 3),
           Expanded(
             child: TextField(
               controller: TextEditingController(
@@ -117,9 +128,10 @@ Widget createTextFieldRow(BuildContext context, int index) {
               },
             ),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 3),
 
           Expanded(
+            flex: 1,
             child: TextField(
               controller: TextEditingController(text: currentItemModel.itemCount.toString()),
               decoration: const InputDecoration(
@@ -141,7 +153,7 @@ Widget createTextFieldRow(BuildContext context, int index) {
             
           ),
 
-          const SizedBox(width: 16),
+          const SizedBox(width: 3),
 
           // Expanded(
           //   child: Center(
@@ -173,7 +185,7 @@ Widget createTextFieldRow(BuildContext context, int index) {
           //   ),
           // ),
 
-          const SizedBox(width: 16),
+          const SizedBox(width: 8),
 
           FloatingActionButton(
             mini: true,
