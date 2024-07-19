@@ -96,7 +96,7 @@ Widget createTextFieldRow(BuildContext context, int index) {
           Expanded(
             child: TextField(
               controller: TextEditingController(
-                text: (currentItemModel.itemSinglePrice == 0) ? '0' : currentItemModel.itemSinglePrice.toInt.toString()),
+                text: (currentItemModel.itemSinglePrice == 0) ? '0' : currentItemModel.itemSinglePrice.toInt().toString()),
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: '單價',
