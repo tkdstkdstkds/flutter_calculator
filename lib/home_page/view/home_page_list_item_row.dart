@@ -10,7 +10,7 @@ Widget createFieldRow(BuildContext context) {
 
         const SizedBox(width: 8),
         const Expanded(
-          flex: 3,
+          flex: 2,
           child: Center(
             child: Text(
               '項目',
