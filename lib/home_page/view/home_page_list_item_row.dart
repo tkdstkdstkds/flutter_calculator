@@ -91,7 +91,7 @@ Widget createTextFieldRow(BuildContext context, int index) {
             )),
           const SizedBox(width: 8),
           Expanded(
-            flex: 3,
+            flex: 2,
             child: TextField(
               controller: TextEditingController(text: currentItemModel.itemName),
               decoration: const InputDecoration(
