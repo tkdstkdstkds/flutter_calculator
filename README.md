@@ -2,8 +2,8 @@
 for practicing flutter, try to build a simple project for testing.
 
 ## demo
-https://tkdstkdstkds.github.io/flutter_calculator/
-([https://duckduckgo.com](https://youtube.com/shorts/kH2oIUzWacc)
+page: https://tkdstkdstkds.github.io/flutter_calculator/
+video: https://youtube.com/shorts/kH2oIUzWacc
 
 
 ## user story:
