@@ -13,6 +13,3 @@ https://tkdstkdstkds.github.io/flutter_calculator/
 * hive_flutter, testing local storage and restore data on a website.
 * list view adding and removing item dynamically.
 
-## cost
-the project cost me 10 days for realizing flutter basic knowledge,
-without chatgpt and copilot to help me, may cost more couple days.
