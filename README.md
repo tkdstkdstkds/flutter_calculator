@@ -1,16 +1,18 @@
 # flutter_calculator
+for practicing flutter, try to build a simple project for testing.
 
-A new Flutter project.
+## demo
+https://tkdstkdstkds.github.io/flutter_calculator/
 
-## Getting Started
+## simple functional graph:
+![MainPage (1)](https://github.com/user-attachments/assets/6778d706-7836-4228-af4f-b1624482425b)
 
-This project is a starting point for a Flutter application.
+## technique testing
+* flutter_bloc pattern, seperating control and view code.
+* PWA testing on Android, iOS browser and saved it like app.
+* hive_flutter, testing local storage and restore data on a website.
+* list view adding and removing item dynamically.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## cost
+the project cost me 10 days for realizing flutter basic knowledge,
+without chatgpt and copilot to help me, may cost more couple days.
